@@ -1,0 +1,2 @@
+# OdooTienda
+tienda odoo python
