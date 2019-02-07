@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="tienda_articulos_action" name="ordenadores"
+                    res_model="tienda.ordenadores"/>
+
+        <record id="tienda_articulos_view_tree" model="ir.ui.view">
+            <field name="name">Lista ordenadores</field>
+            <field name="model">tienda.ordenadores</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cod"/>
+                    <field name="descripcion"/>
+                    <field name="proveedor"/>
+                </tree>
+            </field>
+        </record>
+		
+		<record id="tienda_articulos_view_form" model="ir.ui.view">
+            <field name="name">Formulario de ordenadores</field>
+            <field name="model">tienda.ordenadores</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+						<field name="cod"/>
+						<field name="descripcion"/>
+						<field name="proveedor"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="tienda_articulos_view_search" model="ir.ui.view">
+            <field name="name">Busqueda ordenadores</field>
+            <field name="model">tienda.ordenadores</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cod"/>
+                    <field name="descripcion"/>
+                    <field name="proveedor"/>
+                </search>
+            </field>
+        </record>
+        <menuitem name="Tienda" id="tienda_articulos" sequence="10"/>
+        <menuitem name="Inicio" id="menu_inicio" parent="tienda_articulos" sequence="10"/>
+        <menuitem name="Ordenadores" id="ordenadores" action="tienda_articulos_action" parent="menu_inicio"
+                  sequence="10"/>
+
+    </data>
+</odoo>
